@@ -9,9 +9,11 @@ import "./ERC20.sol";
 // =============================================================================
 
 contract ExamToken is ERC20 {
-    constructor(string memory name_, string memory symbol_, uint256 initialSupply_)
-        ERC20(name_, symbol_, 18)
-    {
+    constructor(
+        string memory name_,
+        string memory symbol_,
+        uint256 initialSupply_
+    ) ERC20(name_, symbol_, 18) {
         // TODO 1.1 --------------------------------------------------------
         // Give the whole initial supply to whoever deploys this token.
         //
@@ -21,5 +23,6 @@ contract ExamToken is ERC20 {
         // The person deploying is msg.sender. The amount is initialSupply_.
         // Write one line below.
 
+        _mint(msg.sender, initialSupply_);
     }
 }
